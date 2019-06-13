@@ -1,2 +1,2 @@
 # goutils
-Various golang utilities 
+Various golang utilities. Doubt usefull to anyone apart from author
