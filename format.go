@@ -3,6 +3,7 @@ package goutils
 import (
 	"strings"
 	"unicode"
+	"fmt"
 )
 
 // ToUnderScore Camelcase to underscore style.
@@ -56,4 +57,24 @@ func ToUnderScore(name string) string {
 	}
 
 	return strings.Join(ss, "")
+}
+
+// PctStr returns "31.00%"
+func PctStr(enumerator, denominator int) string {
+	return FPctStr(float64(enumerator), float64(denominator))
+}
+
+// FPctStr returns "31.00%"
+func FPctStr(enumerator, denominator float64) string {
+	pct := (enumerator / denominator) * 100
+	return fmt.Sprintf("%2.f%%", pct)
+}
+
+// ArrToStr returns string in arr as single string with prefix and suffix applied
+func ArrToStr(arr []string, prefix string, suffix string) string {
+	r := ""
+	for _, str := range arr {
+		r += prefix + str + suffix
+	}
+	return r
 }
