@@ -29,3 +29,11 @@ func Max(x int, y int) int {
 	}
 	return y
 }
+
+// Min lesser of two values
+func Min(x int, y int) int {
+	if y > x {
+		return x
+	}
+	return y
+}
