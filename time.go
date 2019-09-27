@@ -39,6 +39,11 @@ func TimeClipToNow(t *time.Time) *time.Time {
 	return t
 }
 
+// SQLTimeStr formates to MySQL time string `02 Jan 2006 15:04:05`
+func (t Time)SQLTimeStr() string {
+	return time.Time(t).Format("02 Jan 2006 15:04:05")
+}
+
 // NOTE: I think below is no longer used. Delete and make sure cyrus compiles
 
 // UnixFloatNano from `Time`
@@ -50,8 +55,4 @@ type Duration time.Duration
 
 func (d Duration) UnixFloatNano() float64 {
 	return float64(time.Duration(d).Nanoseconds()) / float64(time.Second)
-}
-
-func (t Time)SQLTimeStr() string {
-	return time.Time(t).Format("02 Jan 2006 15:04:05")
 }
