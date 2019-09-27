@@ -53,5 +53,5 @@ func (d Duration) UnixFloatNano() float64 {
 }
 
 func (t Time)SQLTimeStr() string {
-	return t.Format("02 Jan 2006 15:04:05")
+	return time.Time(t).Format("02 Jan 2006 15:04:05")
 }
