@@ -41,7 +41,7 @@ func TimeClipToNow(t *time.Time) *time.Time {
 
 // SQLStr formates to MySQL time string `02 Jan 2006 15:04:05`
 func (t Time)SQLStr() string {
-	return time.Time(t).Format("02 Jan 2006 15:04:05")
+	return time.Time(t).Format("2006 01 02 15:04:05")
 }
 
 // NOTE: I think below is no longer used. Delete and make sure cyrus compiles
