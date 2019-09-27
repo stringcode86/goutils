@@ -52,6 +52,6 @@ func (d Duration) UnixFloatNano() float64 {
 	return float64(time.Duration(d).Nanoseconds()) / float64(time.Second)
 }
 
-func (t Time)slqTimeStr() string {
+func (t Time)SQLTimeStr() string {
 	return t.Format("02 Jan 2006 15:04:05")
 }
