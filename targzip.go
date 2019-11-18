@@ -141,4 +141,5 @@ func Uncompress(src io.Reader, dst string) error {
 			fileToWrite.Close()
 		}
 	}
+	return nil
 }
