@@ -32,7 +32,7 @@ import (
 	"strings"
 )
 
-func compress(src string, buf io.Writer) error {
+func Compress(src string, buf io.Writer) error {
 	// tar > gzip > buf
 	zr := gzip.NewWriter(buf)
 	tw := tar.NewWriter(zr)
@@ -86,7 +86,7 @@ func validRelPath(p string) bool {
 	return true
 }
 
-func uncompress(src io.Reader, dst string) error {
+func Uncompress(src io.Reader, dst string) error {
 	// ungzip
 	zr, err := gzip.NewReader(src)
 	if err != nil {
@@ -104,7 +104,7 @@ func uncompress(src io.Reader, dst string) error {
 		if err != nil {
 			return err
 		}
-		target :=
+		var target string
 
 		// validate name against path traversal
 		if !validRelPath(header.Name) {
