@@ -78,3 +78,7 @@ func ArrToStr(arr []string, prefix string, suffix string) string {
 	}
 	return r
 }
+
+func PrintfCurrLn(format string, a ...interface{}) {
+	_, _ = fmt.Printf("\033[2K\r" + format, a...)
+}
