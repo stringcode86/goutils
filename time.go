@@ -44,6 +44,17 @@ func (t Time)SQLStr() string {
 	return time.Time(t).Format("2006-01-02 15:04:05")
 }
 
+// BeginningOfMonth return the begin of the month of t
+func (t Time)BeginningOfMonth() time.Time {
+	year, month, _ := t.Date()
+	return time.Date(year, month, 1, 0, 0, 0, 0, time.UTC)
+}
+
+// TimeEndOfMonth return the end of the month of t
+func (t Time)EndOfMonth() time.Time {
+	return t.BeginningOfMonth().AddDate(0, 1, -1)
+}
+
 // NOTE: I think below is no longer used. Delete and make sure cyrus compiles
 
 // UnixFloatNano from `Time`
