@@ -46,7 +46,7 @@ func (t Time)SQLStr() string {
 
 // BeginningOfMonth return the begin of the month of t
 func (t Time)BeginningOfMonth() time.Time {
-	year, month, _ := t.Date()
+	year, month, _ := time.Time(t).Date()
 	return time.Date(year, month, 1, 0, 0, 0, 0, time.UTC)
 }
 
