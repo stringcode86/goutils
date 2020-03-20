@@ -8,6 +8,14 @@ func AbsInt(x int) int {
 	return x
 }
 
+// AbsInt returns the absolute value of x.
+func AbsInt64(x int64) int64 {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
 // PCTChange computes percent change
 func PCTChange(before float64, after float64) float64 {
 	return after / before - 1
